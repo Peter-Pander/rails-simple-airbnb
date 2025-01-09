@@ -1,0 +1,19 @@
+<!-- app/views/flats/index.html.erb -->
+<h1>All Available Flats</h1>
+
+<div class="row">
+  <% @flats.each do |flat| %>
+    <div class="col-md-4">
+      <div class="card">
+        <img src="https://via.placeholder.com/150" class="card-img-top" alt="<%= flat.name %>">
+        <div class="card-body">
+          <h5 class="card-title"><%= flat.name %></h5>
+          <p class="card-text"><%= flat.description %></p>
+          <p><strong>Price per night:</strong> <%= flat.price_per_night %> €</p>
+          <p><strong>Max Guests:</strong> <%= flat.number_of_guests %></p>
+          <%= link_to "View Details", flat_path(flat), class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
